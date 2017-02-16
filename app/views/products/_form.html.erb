@@ -1,0 +1,22 @@
+<%= form_for @product do |p| %>
+  <div>
+    <%= p.label :title %>
+    <%= p.text_field :title %>
+  </div>
+  <div>
+    <%= p.label :description %>
+    <%= p.text_area :description %>
+  </div>
+  <div>
+    <%= p.label :price %>
+    <%= p.text_area :price %>
+  </div>
+  <div>
+    <%= p.label :sale_price %>
+    <%= p.text_area :sale_price %>
+  </div>
+  <div>
+    <%= p.collection_select :category_id, Category.order(:name), :id, :name %>
+  </div>
+  <%= p.submit %>
+<% end %>
